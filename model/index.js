@@ -1,4 +1,13 @@
-const { Model, DataTypes } = require('sequelize');
-// establish connections
-const sequelize = require('../config/connection')
+const User = require('./User');
+const Home = require('./Home');
+const Dashboard = require('./Dashboard');
 
+User.hasOne(Home, {
+    foreignKey: 'user_id',
+})
+
+Home.belongsTo(User, {
+    foreignKey: 'user_id',
+})
+
+module.exports = { User, Home, }
