@@ -2,11 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 // establish connections
 const sequelize = require('../config/connection')
 
-class User extends Model {};
+class Home extends Model {};
 
 // 1st Obj: Columns for table
 // 2nd Obj: Specify sequelize
-User.init(
+Home.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -15,23 +15,21 @@ User.init(
             // more than ONE user signing up/logging in
             autoIncrement: true,
         },
-        username: {
+        comment: {
             type: DataTypes.STRING,
-            validte: {
-                // min length of 8
-                len: [8],
-            },
+                validate: {
+                    // max character limit of 40
+                    len: [0, 40],
+                },
         },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validte: {
-                // min length of 8
-                len: [8],
+        dashboard_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'home',
+              key: 'id',
             },
-        },
+          },
     }, 
-    // Add bycrypt HERE {},
     {
         // Passes the connection instance
         sequelize,
@@ -42,8 +40,8 @@ User.init(
         // Will put an underscore inbetween two words (ex. `camelCase` becomes `camel_case`)
         underscored: true,
         // Choose the model name
-        modelName: 'user',
+        modelName: 'home',
     }
 );
 
-module.extends = User;
+module.exports = Home;

@@ -29,8 +29,16 @@ Dashboard.init(
                     len: [0, 40],
                 },
         },
+        home_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'dashboard',
+                key: 'id',
+                // This allows the user to pass in an id which already exist without throwing a `SequelizeUniqueConstraintError`
+                unique: false
+            }
+        }
     }, 
-    // Add bycrypt HERE {},
     {
         // Passes the connection instance
         sequelize,
@@ -45,4 +53,4 @@ Dashboard.init(
     }
 );
 
-module.extends = Dashboard;
+module.exports = Dashboard;

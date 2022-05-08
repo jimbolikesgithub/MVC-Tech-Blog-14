@@ -38,11 +38,19 @@
 <!-- DONE -->
 10. Create `models/` folder
     - Add mapped out files
+        * `Dashboard.js`
+        * `Home.js`
+        * `User.js`
         * `index.js`
-        - Create `api/`
-            * `Dashboard.js`
-            * `Home.js`
-            * `User.js`
-            * `index.js`
     - Add logic (tables)
+11. Create `seeds/` folder
+    - Add mock data to json files
+        * `dashboardData.js`
+        * `homedData.js`
+        * `userData.js`
+    - Call each set of seeds
+        * `seed.js`
+    - TEST SEEDED TABLES IN TERMINAL
+12. 
+
 

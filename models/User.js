@@ -2,11 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 // establish connections
 const sequelize = require('../config/connection')
 
-class Home extends Model {};
+class User extends Model {};
 
 // 1st Obj: Columns for table
 // 2nd Obj: Specify sequelize
-Home.init(
+User.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -15,22 +15,21 @@ Home.init(
             // more than ONE user signing up/logging in
             autoIncrement: true,
         },
-        comment: {
+        username: {
             type: DataTypes.STRING,
-                validate: {
-                    // max character limit of 40
-                    len: [0, 40],
-                },
+            validte: {
+                // min length of 8
+                len: [8],
+            },
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id',
-                // This allows the user to pass in an id which already exist without throwing a `SequelizeUniqueConstraintError`
-                unique: false
-            }
-        }
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validte: {
+                // min length of 8
+                len: [8],
+            },
+        },
     }, 
     // Add bycrypt HERE {},
     {
@@ -43,8 +42,8 @@ Home.init(
         // Will put an underscore inbetween two words (ex. `camelCase` becomes `camel_case`)
         underscored: true,
         // Choose the model name
-        modelName: 'home',
+        modelName: 'user',
     }
 );
 
-module.extends = Home;
+module.exports = User;
