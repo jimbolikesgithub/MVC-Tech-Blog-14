@@ -3,11 +3,13 @@ const { Dashboard } = require('../models');
 const dashboardData = [
     {
         title: 'Will The Great One defeat Stone Cold?',
-        content: 'The peoples champ only wins!'
+        content: 'The peoples champ only wins!',
+        home_id: 1
     },
     {
         title: 'Will The Great One defeat Stone Cold?',
-        content: 'The peoples champ only wins!'
+        content: 'The peoples champ only wins!',
+        home_id: 2
     },
 ]
 

@@ -43,6 +43,7 @@
         * `User.js`
         * `index.js`
     - Add logic (tables)
+<!-- DONE -->
 11. Create `seeds/` folder
     - Add mock data to json files
         * `dashboardData.js`
@@ -51,6 +52,17 @@
     - Call each set of seeds
         * `seed.js`
     - TEST SEEDED TABLES IN TERMINAL
-12. 
+<!--  -->
+12. Create `controllers/` folder
+    - Add mapped out files (main pages)
+        * `dashboard-routes.js`
+        * `home-routes.js`
+        * `index.js`
+    - Create `api/` folder
+        * `user-routes.js`
+        * `post-routes.js`
+        * `comment-routes.js`
+        * `index.js`
+        
 
 
