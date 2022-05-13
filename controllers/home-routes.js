@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
       const dashboard = dashboardData.map((dashboard) => dashboard.get({ plain: true }));
   
       // Pass serialized data and session flag into template
-      res.render('login', { dashboard });
+      res.render('login', { main });
   } catch (err) {
       res.status(500).json(err);
   }
