@@ -33,11 +33,12 @@ package.json
 
 GitHub 
 ----------
+[Github](https://github.com/jimbolikesgithub/MVC-Tech-Blog-14)
 <br/>
 
 Screenshot - 
 ----------
-
+![mvc-screenshot](https://user-images.githubusercontent.com/97565085/168408240-dcc117b2-68a4-4207-a55e-21f4b8c635a3.png)
 
 
 Acknowledgements
