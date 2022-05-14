@@ -2,18 +2,19 @@
 const router = require('express').Router();
 const { Dashboard, Home, User } = require('../../models');
 
+// DONE
 router.get('/login', async (req, res) => {
   try {
       // Get all projects and JOIN with user data
-      const dashboardData = await Dashboard.findAll({
+      const loginData = await Dashboard.findAll({
         include: [Home, User],
       });
   
       // Serialize data so the template can read it
-      const dashboard = dashboardData.map((dashboard) => dashboard.get({ plain: true }));
+      const login = loginData.map((login) => login.get({ plain: true }));
   
       // Pass serialized data and session flag into template
-      res.render('login', { dashboard });
+      res.render('login', { login });
   } catch (err) {
       res.status(500).json(err);
   }
@@ -28,7 +29,7 @@ router.get('/signup', async (req, res) => {
       });
   
       // Serialize data so the template can read it
-      const signup = signupData.map((dashboard) => dashboard.get({ plain: true }));
+      const signup = signupData.map((signup) => signup.get({ plain: true }));
   
       // Pass serialized data and session flag into template
       res.render('signup', { signup });
