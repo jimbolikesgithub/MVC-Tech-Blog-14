@@ -52,7 +52,7 @@
     - Call each set of seeds
         * `seed.js`
     - TEST SEEDED TABLES IN TERMINAL
-<!--  -->
+<!-- DONE -->
 12. Create `controllers/` folder
     - Add mapped out files (main pages)
         * `dashboard-routes.js`
